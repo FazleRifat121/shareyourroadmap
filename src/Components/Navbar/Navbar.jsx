@@ -7,25 +7,40 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="relative">
-      <div className="flex items-center justify-between px-4 py-2 shadow-md">
-        <div>
+    <div className="relative bg-white shadow-md z-50">
+      <div className="flex items-center justify-between px-4 py-3">
+        <div className="flex items-center gap-4 w-full lg:w-auto">
           <img
             src={logo}
             alt="share your logo"
-            className="md:w-34 w-full max-w-[150px]"
+            className="w-[120px] object-contain"
           />
+          <div className="flex-1 hidden sm:block mr-3">
+            <input
+              type="text"
+              placeholder="Search"
+              className="w-full bg-gray-100 p-2 px-4 rounded-full placeholder:text-gray-600"
+            />
+          </div>
         </div>
-        {/* for large device  */}
+        {/* for large devices */}
         <div className="lg:flex items-center gap-6 hidden">
           <h1>create</h1>
           <h1>sign in</h1>
           <h1>logout</h1>
         </div>
-        {/* for small device  */}
-        <div className="lg:hidden ml-auto z-50" onClick={() => setOpen(!open)}>
+        {/* for small devices  */}
+        <div className="lg:hidden ml-auto" onClick={() => setOpen(!open)}>
           {open ? <RxCross1 size={24} /> : <FaBars size={24} />}
         </div>
+      </div>
+
+      <div className="sm:hidden px-4 pb-3">
+        <input
+          type="text"
+          placeholder="Search"
+          className="w-full bg-gray-100 p-2 px-4 rounded-full placeholder:text-gray-600"
+        />
       </div>
 
       <div
