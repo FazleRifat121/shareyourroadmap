@@ -2,7 +2,7 @@ import { useState } from "react";
 import logo from "../../assets/logo.png";
 import { FaBars } from "react-icons/fa";
 import { RxCross1 } from "react-icons/rx";
-
+import { SlMagnifier } from "react-icons/sl";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
@@ -15,12 +15,13 @@ const Navbar = () => {
             alt="share your logo"
             className="w-[120px] object-contain"
           />
-          <div className="flex-1 hidden sm:block mr-3">
+          <div className="flex-1 hidden sm:block mr-3 relative">
             <input
               type="text"
               placeholder="Search"
               className="w-full bg-gray-100 p-2 px-4 rounded-full placeholder:text-gray-600"
             />
+            <SlMagnifier className="absolute top-3.5 right-6" />
           </div>
         </div>
         {/* for large devices */}
@@ -35,12 +36,13 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className="sm:hidden px-4 pb-3">
+      <div className="sm:hidden px-4 pb-3 relative">
         <input
           type="text"
           placeholder="Search"
           className="w-full bg-gray-100 p-2 px-4 rounded-full placeholder:text-gray-600"
         />
+        <SlMagnifier className="absolute top-3.5 right-8" />
       </div>
 
       <div
